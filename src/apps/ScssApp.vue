@@ -1,0 +1,37 @@
+<template>
+    <div>
+       SCSS DIV
+    </div>
+</template>
+
+<script>
+    export default {
+        name:"ScssApp"
+    }
+</script>
+
+<style lang="scss">
+$fonts: 'Poppins', Helvertica, sans-serif;
+$primary-color: #e4e6d3;
+$spacing: 2rem;
+$background-color: yellow;
+$font-size: 2em bold;
+
+
+body {
+    font-family: $fonts;
+    background-color: $primary-color;
+    padding: $spacing;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+div {
+	background-color: $background-color;
+	font-size: $font-size;
+	height:300px;
+	width:500px;
+}
+</style>
