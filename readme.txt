@@ -3,5 +3,6 @@ Commands:
 2. vue --version
 4. vue create vuejs-training
 5. cd vuejs-training
-npm install vue-router vuex vue-resource
+. npm install vue-router vuex vue-resource
+. Vue add router
 . npm run serve 
