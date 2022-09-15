@@ -1,129 +1,94 @@
-<!-- https://stackoverflow.com/questions/69746591/vue-3-warning-tags-with-side-effects-is-breaking-production
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
-  <h4 id="calculator">Calculator</h4>
-  <h4 id="clock">Clock</h4>
-  <h4 id="codepen">Codepen</h4>
-  <h4 id="dino">Dino</h4>
-  <h4 id="hangman">Hangman</h4>
-  <h4 id="keyboard">Keyboard</h4>
-  <h4 id="maze">Maze</h4>
-  <h4 id="sass_">Sass</h4>
-  <h4 id="solitaire">Solitaire</h4>
-  <h4 id="tic_tac_toe">Tic tac toe</h4>
-  <h4 id="tilt_maze">Tilt maze</h4>
-  <div style="text-align: center;">
-      <a href="./games/sudoku/sudoku.html">Sudoku</a><br>
-      <a href="./games/chess/chess.html">Chess</a>
-  </div>
+	<div>
+		<h1> Root Component </h1>
+
+		<button @click="clickme($event,'dummy')">Button  event params</button>
+
+		<div :style="[styleObj,styleObj2]">Styled Div</div>
+
+		<!-- <div @click.self="divclick">
+			Parent Div
+			<div style="background-color:red">Child Div</div>
+		</div>
+		<input @keyup.shift.enter="pageDown" type="text"/> -->
+
+		<!-- <p> {{ firstName }} </p>
+		<p> {{ lastName }} </p>
+		<p> {{ firstName + " " + lastName}} </p>
+		<p> {{ age < 18 ? "not adult" : "adult"}} </p>
+		<p> {{ firstHobby }} </p> -->
+		<!-- <button @click.self="clickme">My button </button> -->
+
+		<!-- <p v-html="phtml"> </p>
+		<p> {{ phtml}} </p>
+		<p :id="id"> This is new para</p>
+		<input type="text" value="John"  :disabled="isdisabled" v-bind="inputBind"  :id="id1" />
+		<p v-show="show" style="background-color:yellow">This is a new para </p>
+		<p v-if="show" style="background-color:cyan">This is a new  para V_IF </p>
+		<p v-else style="background-color:pink">This is a new  para v_ELSE </p>
+
+		<p class="dummy" :class="cobj">Class binding </p>
+
+ -->
+
+	</div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
-</script>
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style> -->
-<!--************************************************************************************************ *-->
-
-
-<template>
-<div>
-  <h1>Root </h1>
-  <p>{{Firstname}}</p>
-  <p>{{Lastname}}</p>
-  <p>{{age}}</p>
-  <p>{{depart}}</p>
-  <p>{{firstHobby}}</p>
-  <button v-on:click="clickme">My button</button>
-  <p v-html="phtml"></p>
-  <p :id="id">hi</p>
-  
-  <input type="text" value="jhon" :disabled="id" v-bind="inputBind"/>
-  <p style="background-color:aqua"  v-show="show">this is era</p>
-  <p style="background-color:aqua"  v-if="show1">this is if era</p>
-  <p style="background-color:red"  v-else>this is else era</p>
-  <p class="dummy" :class={cobj}>this is class pra</p>
-
-  <div style="display:inline">
-    <div style="block">
-
-    </div>
-
-  </div>
-
-</div>
-</template>
-
-<script>
-// import HelloWorld from "./components/HelloWorld.vue";
-
-//import { computed } from '@vue/reactivity';
-
 
 export default {
   name: "App",
   data(){
-    return{
-      firstname:"Sreedhar",
-      lastname:"K",
-      age:22,
-      depart:"Back end",
-      hobbies:["Sing","Play"],
-      phtml:"<span>Sreedhar K</span>",
-      id:"p001",
-      p:false,
-      inputBind:{
-        id:"11002",
-        class:"001"
-      }
-,show:true,
-show1:false,
-is1:true,
-cobj:{
-        class2:false,
-        //warn:false
-        "text-danger":false
-      },
-styleObj:{
-  "background-color":"cyan",
-}
+	return{
+		firstName:"John",
+		lastName:"Smith",
+		age:25,
+		hobbies:["painting","swimming"],
+		number1: 20,
+		number2: 30,
+		phtml:"<span style='color:red'> This is span element </span>",
+		id:"p001",
+		id1:"i002",
+		inputBind:{
+			id:"i001",
+			class:"class1"
+		},
+		show:true,
+		is1:false,
+		cobj:{
+			class2:false,
+			"text-danger":false
+		},
+		styleObj:{
+			"background-color":"cyan",
+			"font-size":"2em"
+		},
+		styleObj2:{
+			"border":"2px solid",
+			"background-color":"pink",
+		}
 
-    
-  }},
-    methods:{
-      clickme(){
-        console.log("Clicked");
-      }
-}
-   
-    
-  
-  , computed:{
-    firstHobby(){
-      return this.hobbies[1];
-    }
-      
-    }
-    
+	}
+  },
+  methods:{
+		divclick(){
+			console.log("Div clicked");
+		},
+		clickme(e,msg){
+			console.log(e,msg);
+		},
+		sum(){
+			return this.number1 + this.number2;
+		}
+  },
+  computed:{
+	firstHobby(){
+		return this.hobbies[0];
+	}
+  }
 };
 </script>
 
-<style lang="scss">
-@import '@/assets/style.css'
+<style scoped>
+@import "@/assets/styles.css"
 </style>
