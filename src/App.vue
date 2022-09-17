@@ -13,9 +13,11 @@
   <h4 id="solitaire">Solitaire</h4>
   <h4 id="tic_tac_toe">Tic tac toe</h4>
   <h4 id="tilt_maze">Tilt maze</h4>
+  <h4 id="puzzles">Puzzles</h4>
   <div style="text-align: center;">
       <a href="./games/sudoku/sudoku.html">Sudoku</a><br>
-      <a href="./games/chess/chess.html">Chess</a>
+      <a href="./games/chess/chess.html">Chess</a><br>
+      <a href="./games/puzzles/puzzles.html">Puzzles</a><br>
   </div>
 </template>
 
