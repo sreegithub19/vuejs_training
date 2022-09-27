@@ -1,4 +1,4 @@
-Commands:
+Commands to run the project:
 1. npm install @vue/cli @vue/cli-service -g
 2. vue --version
 3. npm install json-server -g
