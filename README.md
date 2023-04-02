@@ -16,6 +16,10 @@ Commands to run this particular project:
 - npm install
 - npm run serve
 
+Git:
+
+- git add . && git commit -m "c" && git push origin master
+
 ## Project setup
 
 ```
@@ -46,10 +50,4 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 Demo:
 
-
 https://user-images.githubusercontent.com/55496113/222188722-2cdfd352-51ba-4c5d-8b3a-aff3e742197a.mp4
-
-
-
-
-
